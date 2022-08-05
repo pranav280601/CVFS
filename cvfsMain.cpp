@@ -601,14 +601,14 @@ int truncate_file(char * name)
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-int main()						// (customised shell) shell is a infinite listening loop
+int main()						// (customised shell) 
 {
 	char*ptr = NULL;
 	int ret = 0, fd =0, count =0;
 	char Command[4][80],str[80],arr[1024];							//  max size of row in cmd is 80
 
-	InitialiseSuperBlock();												// Auxilary data 
-	CreateDILB();																	// Auxilary data
+	InitialiseSuperBlock();												
+	CreateDILB();																	
 
 	while(1)
 	{
@@ -616,13 +616,13 @@ int main()						// (customised shell) shell is a infinite listening loop
 		strcpy(str,"");
 
 		printf("\n Pranav's Virtual File System : >");
-		fgets(str,80,stdin);		// scanf("%[^'\n']s",str);				 // special string - fgets (so that enter does not remain)
+		fgets(str,80,stdin);						 
 
-		count = sscanf(str, "%s %s %s %s", Command[0], Command[1],Command[2],Command[3]);			// sscanf does Tokenisation which breaks given commands into 4 (strtok)
+		count = sscanf(str, "%s %s %s %s", Command[0], Command[1],Command[2],Command[3]);			
 
 		if(count == 1)
 		{
-			if(strcmp(Command[0],"ls")==0)				// strcmp   string comparision
+			if(strcmp(Command[0],"ls")==0)				
 			{
 				ls_file();
 			}
